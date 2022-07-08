@@ -116,6 +116,33 @@ ggplot(starwars, aes(height)) +
 
 ### Pick a numerical variable and a categorical variable and make a visualisation (you pick the type!) to visualise the relationship between the two variables. Along with your code and output, provide an interpretation of the visualisation.
 
+``` r
+ggplot(starwars, 
+       aes(x = mass, fill = gender)) +
+  geom_histogram(alpha = 0.5, binwidth = 100)
+```
+
+    ## Warning: Removed 28 rows containing non-finite values (stat_bin).
+
+![](starwars_files/figure-gfm/num-cat-1.png)<!-- -->
+
 ### Pick two categorical variables and make a visualisation to visualise the relationship between the two variables. Along with your code and output, provide an interpretation of the visualisation.
 
+``` r
+ggplot(starwars, aes(x = gender, fill =hair_color)) +
+  geom_bar()
+```
+
+![](starwars_files/figure-gfm/cat-cat-1.png)<!-- -->
+
 ### Pick two numerical variables and two categorical variables and make a visualisation that incorportes all of them and provide an interpretation with your answer.
+
+``` r
+ggplot(starwars, 
+       aes(x = mass, y = height)) +
+  geom_violin()
+```
+
+    ## Warning: Removed 28 rows containing non-finite values (stat_ydensity).
+
+![](starwars_files/figure-gfm/multi-1.png)<!-- -->
