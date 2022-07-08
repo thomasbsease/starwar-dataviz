@@ -25,12 +25,33 @@ glimpse(starwars)
     ## $ vehicles   <list> <"Snowspeeder", "Imperial Speeder Bike">, <>, <>, <>, "Imp…
     ## $ starships  <list> <"X-wing", "Imperial shuttle">, <>, <>, "TIE Advanced x1",…
 
+``` r
+names(starwars)
+```
+
+    ##  [1] "name"       "height"     "mass"       "hair_color" "skin_color"
+    ##  [6] "eye_color"  "birth_year" "sex"        "gender"     "homeworld" 
+    ## [11] "species"    "films"      "vehicles"   "starships"
+
+``` r
+ncol(starwars)
+```
+
+    ## [1] 14
+
+``` r
+nrow(starwars)
+```
+
+    ## [1] 87
+
 ### Modify the following plot to change the color of all points to `"pink"`.
 
 ``` r
 ggplot(starwars, 
        aes(x = height, y = mass, color = gender, size = birth_year)) +
-  geom_point(color = "#30509C")
+  geom_point(color = "pink") +
+  theme_bw()
 ```
 
     ## Warning: Removed 51 rows containing missing values (geom_point).
@@ -42,13 +63,12 @@ ggplot(starwars,
 ``` r
 ggplot(starwars, 
        aes(x = height, y = mass, color = gender, size = birth_year)) +
-  geom_point(color = "#30509C") +
-  labs(
-    #title = "___",
-    #x = "___", 
-    #y = "___",
-    #___
-    )
+  geom_point(color = "Purple") +
+  labs(title = "First Starwars ScatterPlot",
+    x = "Height in cm", 
+    y = "Mass in kgs", 
+    size = "Birth Year") +
+  theme_dark()
 ```
 
     ## Warning: Removed 51 rows containing missing values (geom_point).

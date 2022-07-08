@@ -12,6 +12,9 @@ library(tidyverse)
 
 ```{r glimpse-starwars}
 glimpse(starwars)
+names(starwars)
+ncol(starwars)
+nrow(starwars)
 ```
 
 ### Modify the following plot to change the color of all points to `"pink"`.
@@ -19,7 +22,8 @@ glimpse(starwars)
 ```{r scatterplot}
 ggplot(starwars, 
        aes(x = height, y = mass, color = gender, size = birth_year)) +
-  geom_point(color = "#30509C")
+  geom_point(color = "pink") +
+  theme_bw()
 ```
 
 ### Add labels for title, x and y axes, and size of points. Uncomment to see the effect.
@@ -27,13 +31,12 @@ ggplot(starwars,
 ```{r scatterplot-labels}
 ggplot(starwars, 
        aes(x = height, y = mass, color = gender, size = birth_year)) +
-  geom_point(color = "#30509C") +
-  labs(
-    #title = "___",
-    #x = "___", 
-    #y = "___",
-    #___
-    )
+  geom_point(color = "Purple") +
+  labs(title = "First Starwars ScatterPlot",
+    x = "Height in cm", 
+    y = "Mass in kgs", 
+    size = "Birth Year") +
+  theme_dark()
 ```
 
 ### Pick a single categorical variable from the data set and make a bar plot of its distribution.
