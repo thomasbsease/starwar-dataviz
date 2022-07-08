@@ -43,16 +43,26 @@ ggplot(starwars,
 
 (A little bit of starter code is provided below, and the code chunk is set to not be evaluated with `eval = FALSE` because the current code in there is not valid code and hence the document wouldn't knit. Once you replace the code with valid code, set the chunk option to `eval = TRUE`, or remove the `eval` option altogether since it's set to `TRUE` by default.)
 
+Here is a barchart that I made today in class using gender as a categorical varaible :)
 ```{r barplot, eval = FALSE}
-ggplot(starwars, aes(___)) +
-  geom___
+ggplot(starwars, aes(gender)) +
+  geom_bar(color = 'Blue', fill = "Red")
 ```
 
 ### Pick a single numerical variable and make a histogram of it.
 
 (This time no starter code is provided, you're on your own!)
 
+Here is a histogram that I have created in class. You will see that I changed the color, flipped the graph 90 degrees, and changed the theme.  
 ```{r histogram}
+ggplot(starwars, aes(height)) +
+  geom_histogram(binwidth = 15, fill = 'green') +
+  #coord_flip() +
+  theme_minimal() +
+  labs(title = "My Histogram :)",
+       subtitle = "by Tom S",
+       x = "Count", 
+       y = 'Hieght in cms')
 
 ```
 
