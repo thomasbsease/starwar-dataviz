@@ -1,6 +1,6 @@
 ---
 title: "Visualizing Starwars characters"
-author: "Add your name"
+author: "Thomas B Sease"
 output: github_document
 ---
 
