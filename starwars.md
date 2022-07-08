@@ -116,6 +116,9 @@ ggplot(starwars, aes(height)) +
 
 ### Pick a numerical variable and a categorical variable and make a visualisation (you pick the type!) to visualise the relationship between the two variables. Along with your code and output, provide an interpretation of the visualisation.
 
+Here is a histogram that is shows the frequency of various masses (in
+kgs) by gender.
+
 ``` r
 ggplot(starwars, 
        aes(x = mass, fill = gender)) +
@@ -128,6 +131,9 @@ ggplot(starwars,
 
 ### Pick two categorical variables and make a visualisation to visualise the relationship between the two variables. Along with your code and output, provide an interpretation of the visualisation.
 
+This is a bar graph showing the frequency of different genders split by
+hair color :)
+
 ``` r
 ggplot(starwars, aes(x = gender, fill =hair_color)) +
   geom_bar()
@@ -137,12 +143,19 @@ ggplot(starwars, aes(x = gender, fill =hair_color)) +
 
 ### Pick two numerical variables and two categorical variables and make a visualisation that incorportes all of them and provide an interpretation with your answer.
 
+Here is a scatterplot of the relationship between height and mass split
+out by sex and gender :)
+
 ``` r
 ggplot(starwars, 
-       aes(x = mass, y = height)) +
-  geom_violin()
+       aes(x = height, y = mass, color = gender, shape = sex)) +
+  geom_point() 
 ```
 
-    ## Warning: Removed 28 rows containing non-finite values (stat_ydensity).
+    ## Warning: Removed 29 rows containing missing values (geom_point).
 
 ![](starwars_files/figure-gfm/multi-1.png)<!-- -->
+
+``` r
+#also shape, fill, alpha, color, facet wrap
+```
